@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import {FaGithub} from "react-icons/fa";
 import {Viewport} from "next";
+import Nav from "@/components/Nav";
 
 const outfit = Outfit({subsets: ["latin"]});
 
@@ -49,41 +50,11 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang="en" className={outfit.className}>
-			<body className="bg-[#050505] text-white">
+			<body className="bg-[#050505] text-white flex flex-col ">
+				<Nav />
 				<div id="wrapper" className="overflow-x-hidden">
 					<div className="flex align-middle place-content-center bg-transparent">
-						<div className="max-w-[1300px] w-full flex flex-col gap-24 p-48">
-							<nav className="px-128 sticky top-48 py-16 flex max-[630px]:px-32 z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out">
-								<Link href={"/"}>
-									<Image
-										src={"/logo.svg"}
-										width={33}
-										height={33}
-										alt="DuckyHQ Logo"
-										className="hover-active-effect"
-									/>
-								</Link>
-								<div className="flex gap-32 max-[630px]:gap-16">
-									<Link
-										href={"/"}
-										className="text-sub hover:text-selected active:text-selected/75 duration-150"
-									>
-										Home
-									</Link>
-									<Link
-										href={"/#projects"}
-										className="text-sub hover:text-selected active:text-selected/75 duration-150"
-									>
-										Projects
-									</Link>
-									<Link
-										href={"https://github.com/DuckyHQ0"}
-										className="text-sub hover:text-selected active:text-selected/75 duration-150"
-									>
-										GitHub
-									</Link>
-								</div>
-							</nav>
+						<div className="max-w-[1300px] w-full flex flex-col gap-24 p-48 max-[630px]:px-[20px]">
 							{children}
 							<footer className="flex p-64 place-content-between border border-stroke-1 rounded-out place-items-center max-[450px]:align-middle max-[450px]:place-content-center">
 								<Link href={"/"} className="max-[450px]:hidden">
@@ -96,11 +67,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 									/>
 								</Link>
 								<div className="flex flex-col gap-8 place-items-end max-[450px]:place-items-center">
-									<div className="w-48 h-48 bg-[#eeeeee] flex place-content-center align-middle place-items-center rounded-full hover-active-effect">
-										<Link href={"https://github.com/DuckyHQ0"}>
+									<Link href={"https://github.com/DuckyHQ0"}>
+										<div className="w-48 h-48 bg-[#eeeeee] flex place-content-center align-middle place-items-center rounded-full hover-active-effect">
 											<FaGithub className="text-black w-24 h-24" />
-										</Link>
-									</div>
+										</div>
+									</Link>
 									<Link
 										href={"https://dukc.dev"}
 										className="text-sub hover:text-selected active:text-selected/75 duration-150 max-[450px]:text-center"
@@ -111,7 +82,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 							</footer>
 						</div>
 					</div>
-					<div className="w-[20rem] h-[30rem] animate-spin-slow bg-gradient-to-b from-brand-purple to-brand-blue opacity-80 blur-[250px] relative bottom-[80vh] left-[60vw] -z-50"></div>
+					<div className="w-[20rem] h-[30rem] animate-spin-slow bg-gradient-to-b from-brand-purple to-brand-blue opacity-80 blur-[250px] relative bottom-[120vh] left-[60vw] -z-50"></div>
 				</div>
 			</body>
 		</html>

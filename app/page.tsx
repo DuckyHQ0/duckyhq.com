@@ -1,12 +1,9 @@
-import Image from "next/image";
 import localFont from "next/font/local";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 
 import getProjectMetadata from "@/components/projects/getProjectMetadata";
 import ProjectPreview from "@/components/projects/ProjectPreview";
-
-import React, {createContext} from "react";
 
 const hanson = localFont({
 	src: "./hanson.woff2",
@@ -22,7 +19,11 @@ export default function Home() {
 		<>
 			<div className="flex flex-col w-full py-[200px] gap-24">
 				<div className="flex flex-col">
-					<h1 className={`${hanson.className} text-[86px] max-[670px]:text-1 max-[450px]:text-2`}>DuckyHQ</h1>
+					<h1
+						className={`${hanson.className} text-[86px] max-[670px]:text-1 max-[450px]:text-2`}
+					>
+						DuckyHQ
+					</h1>
 					<p className="text-body">
 						Unique open source software for the world.
 					</p>

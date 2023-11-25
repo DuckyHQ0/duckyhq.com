@@ -16,7 +16,7 @@ We already have this, with other 3rd party launchers, so I wanted to make someth
 
 ### HQLauncher is now in development.
 
-[Contribute to the project now. (Click)](https://github.com/dukcc/HQLauncher)
+[Contribute to the project now. (Click)](https://github.com/duckyhq0/HQLauncher)
 
 ## Front-end Design Progress
 
