@@ -111,7 +111,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 							</footer>
 						</div>
 					</div>
-					<div className="w-[20rem] h-[30rem] animate-spin-slow bg-gradient-to-b from-brand-purple to-brand-blue opacity-80 blur-[250px] relative bottom-[60vh] left-[60vw] -z-50"></div>
+					<div className="w-[20rem] h-[30rem] animate-spin-slow bg-gradient-to-b from-brand-purple to-brand-blue opacity-80 blur-[250px] relative bottom-[80vh] left-[60vw] -z-50"></div>
 				</div>
 			</body>
 		</html>
