@@ -20,7 +20,7 @@ export default function Nav() {
 			animate="visible"
 			variants={variants}
 			transition={{type: "spring", stiffness: 200, duration: 0.4, delay: 0.2}}
-			className="px-128 sticky top-48 py-16 flex max-[630px]:px-32 max-[1200px]:rounded-none max-w-[1204px] w-full place-self-center m-48 max-[630px]:mx-[20px] z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out"
+			className="px-128 sticky top-48 py-16 flex max-[630px]:px-32 max-[1200px]:rounded-none max-w-[1204px] max-[1200px]:border-x-0 w-full place-self-center m-48 max-[630px]:mx-[20px] z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out"
 		>
 			<Link href={"/"}>
 				<Image
