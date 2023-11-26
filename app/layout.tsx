@@ -17,6 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://duckyhq.com'),
 	title: "DuckyHQ",
 	description: "Unique open source software for the world.",
 	keywords: [
