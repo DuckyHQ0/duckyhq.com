@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { HiArrowUpRight, HiBars3, HiXMark } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
 
 export default function Nav() {
   const [navbar, setNavbar] = useState(false);
