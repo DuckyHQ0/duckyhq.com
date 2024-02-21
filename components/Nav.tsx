@@ -1,56 +1,111 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { HiArrowUpRight, HiBars3, HiXMark } from "react-icons/hi2";
 
 export default function Nav() {
-	const variants = {
-		visible: {opacity: 1},
-		hidden: {opacity: 0},
-	};
-
-	const item = {
-		visible: {opacity: 1, y: 0},
-		hidden: {opacity: 0, y: -100},
-	};
-	return (
-		<motion.nav
-			initial="hidden"
-			animate="visible"
-			variants={variants}
-			transition={{type: "spring", stiffness: 200, duration: 0.4, delay: 0.2}}
-			className="px-128 sticky top-48 py-16 flex max-[630px]:px-32 max-[1200px]:rounded-none max-w-[1204px] max-[1200px]:border-x-0 w-full place-self-center m-48 max-[630px]:mx-[20px] z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out"
-		>
-			<Link href={"/"}>
-				<Image
-					src={"/logo.svg"}
-					width={33}
-					height={33}
-					alt="DuckyHQ Logo"
-					className="hover-active-effect"
-				/>
-			</Link>
-			<motion.div variants={item} transition={{type: "spring", stiffness: 100, duration: 0.4}} className="flex gap-32 max-[630px]:gap-16">
-				<Link
-					href={"/"}
-					className="text-sub hover:text-selected active:text-selected/75 duration-150"
-				>
-					Home
-				</Link>
-				<Link
-					href={"/#projects"}
-					className="text-sub hover:text-selected active:text-selected/75 duration-150"
-				>
-					Projects
-				</Link>
-				<Link
-					href={"https://github.com/DuckyHQ0"}
-					className="text-sub hover:text-selected active:text-selected/75 duration-150"
-				>
-					GitHub
-				</Link>
-			</motion.div>
-		</motion.nav>
-	);
+  const [navbar, setNavbar] = useState(false);
+  const containerVars = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  const childVars = {
+    hidden: { opacity: 0, x: 20 },
+    show: { opacity: 1, x: 0 },
+  };
+  return (
+    <nav className="fixed top-48 max-[630px]:top-24 place-self-center z-50 flex flex-col gap-12 max-w-[1300px] w-full mx-20">
+      <div className="px-128 py-16 flex max-[630px]:px-32 w-full z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out max-[1300px]:border-x-0 max-[1300px]:rounded-none">
+        <Link href={"/"}>
+          <Image
+            src={"/logo.svg"}
+            width={33}
+            height={33}
+            alt="DuckyHQ Logo"
+            className="hover-active-effect"
+          />
+        </Link>
+        <div className="flex gap-32 max-[630px]:gap-16 max-[700px]:hidden">
+          <Link
+            href={"/"}
+            className="text-sub hover:text-selected active:text-selected/75 duration-150"
+          >
+            Home
+          </Link>
+          <Link
+            href={"/#projects"}
+            className="text-sub hover:text-selected active:text-selected/75 duration-150"
+          >
+            Projects
+          </Link>
+          <Link
+            href={"/blogs"}
+            className="text-sub hover:text-selected active:text-selected/75 duration-150"
+          >
+            Blog
+          </Link>
+          <Link
+            href={"https://github.com/DuckyHQ0"}
+            className="text-sub hover:text-selected active:text-selected/75 duration-150"
+          >
+            GitHub
+          </Link>
+          <Link
+            href={"https://alive.duckyhq.com"}
+            className="text-sub hover:text-selected active:text-selected/75 duration-150"
+          >
+            Alive
+          </Link>
+        </div>
+        <button
+          onClick={() => setNavbar(!navbar)}
+          className="hidden text-[24px] max-[700px]:block"
+        >
+          {navbar ? <HiXMark /> : <HiBars3 />}
+        </button>
+      </div>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={containerVars}
+        className={`flex-col py-36 items-center content-center gap-32 max-[630px]:px-32 w-full z-50 place-content-between place-items-center backdrop-blur-main bg-bg-1 border border-stroke-1 rounded-out max-[1300px]:border-x-0 max-[1300px]:rounded-none ${
+          navbar ? "flex" : "hidden"
+        }`}
+      >
+        <motion.div variants={childVars}>
+          <MobileNavLink text="Home" link="/" />
+        </motion.div>
+        <motion.div variants={childVars}>
+          <MobileNavLink text="Projects" link="/#projects" />
+        </motion.div>
+        <motion.div variants={childVars}>
+          <MobileNavLink text="Blog" link="/blogs" />
+        </motion.div>
+        <motion.div variants={childVars}>
+          <MobileNavLink text="GitHub" link="https://github.com/DuckyHQ0" />
+        </motion.div>
+        <motion.div variants={childVars}>
+          <MobileNavLink text="Alive" link="https://alive.duckyhq.com" />
+        </motion.div>
+      </motion.div>
+    </nav>
+  );
 }
+const MobileNavLink = ({ text, link }: { text: string; link: string }) => {
+  return (
+    <Link
+      href={link}
+      className="text-3 hover:text-selected active:text-selected/75 duration-150"
+    >
+      {text}
+    </Link>
+  );
+};

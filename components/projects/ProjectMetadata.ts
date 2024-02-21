@@ -1,6 +1,7 @@
 export interface ProjectMetadata {
-    title: string;
-    type: string;
-    image: string;
-    slug: string;
+  title: string;
+  type: string;
+  image: string;
+  date: string;
+  slug: string;
 }
