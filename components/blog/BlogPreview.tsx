@@ -22,14 +22,14 @@ export default function BlogPreview(props: BlogMetadata) {
     >
       <Link
         href={`/blog/${props.slug}`}
-        className="w-full h-fit flex max-[520px]:flex-col max-[520px]:border-b max-[520px]:border-stroke-2 max-[520px]:pb-32 gap-24 group hover:-translate-y-4 active:translate-y-8 duration-150 ease-out items-center"
+        className="w-full h-fit flex max-[520px]:flex-col max-[520px]:border-b max-[520px]:border-stroke-2 max-[520px]:pb-32 gap-24 group items-center"
       >
         <Image
           src={props.image}
           width={1220}
           height={714}
           alt="Banner"
-          className="aspect-video h-128 w-auto max-[520px]:w-full max-[520px]:h-auto border border-stroke-2 rounded-in"
+          className="aspect-video h-128 w-auto max-[520px]:w-full max-[520px]:h-auto border border-stroke-2 rounded-in group-hover:-translate-y-4 group-active:translate-y-8 duration-150 ease-out"
         />
         <div className="flex flex-col gap-24 w-full">
           <h3 className="text-3 w-full font-medium group-hover:text-selected duration-150 ease-out">
