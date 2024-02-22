@@ -31,8 +31,8 @@ export default function Blog(props: any) {
   const slug = props.params.slug;
   const { content, image, date, author, type, title } = getBlogContent(slug);
   return (
-    <div className="flex flex-col gap-64 items-center align-middle p-48 mt-128 border border-stroke-1 rounded-out max-w-[1300px] min-h-screen w-full">
-      <div className="flex flex-col gap-48">
+    <div className="flex flex-col gap-64 max-[600px]:gap-36 items-center align-middle p-48 mt-128 border border-stroke-1 rounded-out max-w-[1300px] min-h-screen w-full">
+      <div className="flex flex-col gap-48 max-[600px]:gap-32">
         <h1 className="text-1 font-bold leading-none">{title}</h1>
         <div className="flex justify-between max-[450px]:justify-start max-[420px]:flex-wrap gap-16">
           <p className="text-body whitespace-nowrap">{type}</p>
