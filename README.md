@@ -1,3 +1,3 @@
-# DuckyHQ Website
+# duckyhq.com
 
-A very simple website written in Next.js, with a markdown posts system.
+A website including all projects of DuckyHQ, and documentation for them.

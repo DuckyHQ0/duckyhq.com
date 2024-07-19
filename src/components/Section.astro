@@ -1,0 +1,41 @@
+---
+const { image, id, alternate } = Astro.props;
+console.log(image);
+---
+
+<section
+  id={id}
+  class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+>
+  {
+    alternate ? (
+      <>
+        <div
+          class={` bg-cover rounded-out border border-stroke-1 tilt-image h-full w-full object-cover bg-clip-padding`}
+          style={`background-image: url('${image}');`}
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.1"
+          data-tilt-perspective="1750"
+        />
+        <div class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out">
+          <slot />
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out">
+          <slot />
+        </div>
+        <div
+          class={`bg-cover rounded-out border border-stroke-1 tilt-image h-full w-full object-cover`}
+          style={`background-image: url('${image}');`}
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.1"
+          data-tilt-perspective="1750"
+        />
+      </>
+    )
+  }
+</section>

@@ -1,0 +1,56 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+---
+
+<MainLayout title="DuckyHQ - About">
+  <script>
+    import VanillaTilt from "vanilla-tilt";
+  </script>
+  <section
+    id="landing"
+    class="flex flex-col justify-center items-center gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
+  >
+    <h1
+      class="font-hanson text-[128px] max-[630px]:text-[72px] max-[370px]:text-[64px] text-white leading-none"
+    >
+      About
+    </h1>
+    <div
+      class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
+    >
+    </div>
+  </section>
+
+  <Section alternate image="/assets/gradient-01.png">
+    <h1 class="h1">Present</h1>
+    <p class="body">
+      DuckyHQ is an organization that focuses on making unique, free and
+      open-source software, such as design systems, templates, and apps.
+    </p>
+  </Section>
+
+  <Section image="/assets/gradient-02.png">
+    <h1 class="h1">Past</h1>
+    <p class="body">
+      DuckyHQ used to be dukc's personal brand, and website. But it didn't make
+      much sense for an organization to be dukc's brand, and it felt too
+      corporate. So dukc split off, but he still runs DuckyHQ. DuckyHQ started
+      dukc's design journey with HQLauncher, which evolved into HQDesign, and
+      then MorphUI.
+    </p>
+  </Section>
+
+  <Section alternate image="/assets/gradient-03.png">
+    <h1 class="h1">Origins</h1>
+    <p class="body">
+      All the way back, dukc started his first city. It was called Ducky City,
+      and he also created an office building, containing a "core", and other
+      high-tech futuristic stuff. It was named DuckyHQ, this is where the name
+      came from for this organization. Now we're kind of stuck with this name.
+      That city was destroyed, and then dukc kept on building new cities, until
+      it died down. This was the start of dukc's passion for gaming and city
+      design, and then that stuff split off into Alive.
+    </p>
+  </Section>
+</MainLayout>

@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import Feature from "../components/hql/Feature.astro";
+import { Button } from "../components/Button";
+---
+
+<MainLayout title="DuckyHQ - HQLauncher">
+  <script>
+    import VanillaTilt from "vanilla-tilt";
+  </script>
+  <section
+    id="landing"
+    class="flex flex-col relative justify-end items-start gap-32 h-[88vh] p-64 max-[800px]:p-24 border border-stroke-1 rounded-out overflow-clip"
+  >
+    <h1
+      class="font-hanson text-[96px] max-[1000px]:text-[64px] max-[640px]:text-[36px] max-[400px]:text-[30px] text-white leading-none"
+    >
+      HQLauncher
+    </h1>
+    <p class="body">
+      An open source Minecraft launcher with modern UI and instance/mod
+      management.
+    </p>
+    <div
+      class="absolute -z-10 w-[22vw] h-[50vh] left-[50%] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
+    >
+    </div>
+  </section>
+  <section
+    id="features"
+    class="grid grid-cols-2 max-[800px]:grid-cols-1 grid-rows-2 max-[800px]:grid-rows-4 gap-12"
+  >
+    <div
+      class="p-32 flex flex-col gap-16 bg-fg-1 border border-stroke-1 rounded-out"
+    >
+      <h3 class="h3">Instance Managment</h3>
+      <p class="body">
+        Create seperate Minecraft instances, custom, or using a modpack.
+        Organize them with groups and change the view.
+      </p>
+      <Image
+        src={"/assets/hql/hql-instance.png"}
+        alt="Instance"
+        width={1725}
+        height={1064}
+        data-tilt
+        data-tilt-perspective="1750"
+        class="rounded-in"
+      />
+    </div>
+    <div
+      class="p-32 flex flex-col gap-16 bg-fg-1 border border-stroke-1 rounded-out"
+    >
+      <h3 class="h3">Mod Managment</h3>
+      <p class="body">
+        Download modpacks, individual mods, and update them automatically.
+      </p>
+      <Image
+        src={"/assets/hql/hql-mod-manage.png"}
+        alt="Instance"
+        width={1725}
+        height={1064}
+        data-tilt
+        data-tilt-perspective="1750"
+        class="rounded-in"
+      />
+    </div>
+    <div
+      class="p-32 flex flex-col gap-16 bg-fg-1 border border-stroke-1 rounded-out"
+    >
+      <h3 class="h3">Modern UI</h3>
+      <p class="body">
+        User interface and front-end built with MorphUI, which makes the app
+        very pretty.
+      </p>
+      <Image
+        src={"/assets/hql/hql-ui.png"}
+        alt="Instance"
+        width={1725}
+        height={1064}
+        data-tilt
+        data-tilt-perspective="1750"
+        class="rounded-in"
+      />
+    </div>
+    <div
+      class="p-32 flex flex-col gap-16 bg-fg-1 border border-stroke-1 rounded-out"
+    >
+      <h3 class="h3">More</h3>
+      <div class="grid grid-cols-2 max-[850px]:grid-cols-1 gap-y-24">
+        <Feature text="Free & open-source" />
+        <Feature text="Multiplatform" />
+        <Feature text="Customizable" />
+        <Feature text="Secure account system" />
+        <Feature text="Skin managment" />
+        <Feature text="Pack managment" />
+        <Feature text="Screenshot managment" />
+        <Feature text="Accessible" />
+      </div>
+      <p class="subtext">
+        HQLauncher is in alpha. These are the features planned, most are not
+        complete.
+      </p>
+      <div
+        onclick="window.location.href='https://github.com/DuckyHQ0/hqlauncher'"
+      >
+        <Button>GitHub</Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>

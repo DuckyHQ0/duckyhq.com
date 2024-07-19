@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import Prose from "../../components/Prose.astro";
+
+export async function getStaticPaths() {
+  const docsEntries = await getCollection("docs");
+  return docsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as {
+  entry: {
+    [x: string]: any;
+    data: { title: String; colour: String; type: String; category: String };
+  };
+};
+const { Content } = await entry.render();
+---
+
+<MainLayout title=`DuckyHQ - ${entry.data.title}`>
+  <DocsLayout
+    colour={entry.data.colour}
+    category={entry.data.category}
+    type={entry.data.type}
+    title={entry.data.title}
+  >
+    <Prose><Content /></Prose>
+  </DocsLayout>
+</MainLayout>

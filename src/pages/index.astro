@@ -1,0 +1,62 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+import { Button } from "../components/Button";
+---
+
+<MainLayout title="DuckyHQ">
+  <script>
+    import VanillaTilt from "vanilla-tilt";
+  </script>
+  <section
+    id="landing"
+    class="flex flex-col relative justify-center items-start gap-32 h-[88vh] p-64 max-[620px]:p-24 border border-stroke-1 rounded-out overflow-clip"
+  >
+    <h1
+      class="font-hanson text-[128px] max-[1000px]:text-[72px] max-[620px]:text-[40px] text-white leading-none"
+    >
+      DuckyHQ
+    </h1>
+    <p class="body">Unique open source software for the world.</p>
+    <div
+      class="absolute left-[50%] bottom-[40%] -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
+    >
+    </div>
+  </section>
+  <Section id="hqlauncher" image="/assets/hql-cover.png">
+    <h1 class="h1 max-[420px]:h2">HQLauncher</h1>
+    <p class="body">
+      An open source Minecraft launcher with modern UI and instance/mod
+      management.
+    </p>
+    <div class="flex gap-12">
+      <div onclick="window.location.href='/hqlauncher';">
+        <Button>Learn More</Button>
+      </div>
+    </div>
+  </Section>
+  <Section id="morphui" alternate image="/assets/ui-cover.png">
+    <h1 class="h1 max-[420px]:h2">MorphUI</h1>
+    <p class="body">
+      A dark, modern, open source UI kit for DuckyHQ projects. Fully documented
+      with components built for React and Figma.
+    </p>
+    <div class="flex gap-12">
+      <div onclick="window.location.href='/morphui';">
+        <Button>Learn More</Button>
+      </div>
+      <div onclick="window.location.href='/docs/morphui';">
+        <Button colour="secondary">Docs</Button>
+      </div>
+    </div>
+  </Section>
+  <Section id="alive" image="/assets/terrain2.png">
+    <h1 class="h1 max-[420px]:h2">Alive</h1>
+    <p class="body">Innovative gaming experiences.</p>
+    <div class="flex gap-12">
+      <div onclick="window.location.href='https://alive.duckyhq.com';">
+        <Button>Learn More</Button>
+      </div>
+    </div>
+  </Section>
+</MainLayout>
